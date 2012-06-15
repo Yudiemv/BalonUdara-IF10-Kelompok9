@@ -530,7 +530,7 @@ void freetexture(GLuint texture) {
 
 
 
-
+/*
 
 
 GLuint loadtextures(const char *filename, int width, int height) {
@@ -539,13 +539,6 @@ GLuint loadtextures(const char *filename, int width, int height) {
 	unsigned char *data;
 	FILE *file;
 
-	/*
-	 if (filename == "water.bmp") {
-	 Image *img = loadBMP(filename);
-	 width = img->width;
-	 height = img->height;
-	 }
-	 */
 
 	file = fopen(filename, "rb");
 	if (file == NULL)
@@ -572,15 +565,7 @@ GLuint loadtextures(const char *filename, int width, int height) {
 	return texture;
 }
 
-
-
-
-
-
-
-
-
-
+*/
 
 
 
@@ -626,24 +611,20 @@ glutSolidSphere(20,20,50);
 glPopMatrix();
 }
 
-void balon2(void){
+
+
+void balonbawah(void){
+GLUquadricObj *pObj;
+pObj =gluNewQuadric();
+gluQuadricNormals(pObj, GLU_SMOOTH);    
+
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[1]);
-glTranslatef(0,96,0);
+glTranslatef(0,100,0);  
 glRotatef(90,1,0,0);
-glutSolidCone(19.42,37,20,50);
+gluCylinder(pObj, 20, 5, 40, 25, 25);
 glPopMatrix();
 }
-
-/*
-void balon2(void){
-glPushMatrix();
-glTranslatef(0,80,0);
-glScalef(1,1,0.5);
-glutSolidTorus(1,1,20,50);
-glPopMatrix();
-}
-*/
 
 /*
 void kotak1(void){
@@ -658,10 +639,15 @@ void kotak1(void){
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[2]);
 glTranslatef(0,50,0);
-//glScalef(10,10,10);
-glutSolidCube(10);
+glutSolidCube(7.5);
 glPopMatrix();
 }
+
+
+
+
+
+
 
 
 
@@ -892,10 +878,6 @@ void burung(void) {
 
 
 
-
-
-
-
 void display(void){
 //    glutSwapBuffers();
 	glClearStencil(0); //clear the stencil buffer
@@ -972,13 +954,18 @@ glPopMatrix();
 
 
 //Balon
+
 balon1();
-balon2();
+
+balonbawah();
+
 
 
 
 //Kotak dibawah balon
 kotak1();
+
+
 
 
 
@@ -1118,8 +1105,8 @@ glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	glTexImage2D(GL_TEXTURE_2D, 0, 3, image1->sizeX, image1->sizeY, 0, GL_RGB,
 			GL_UNSIGNED_BYTE, image1->data);
-*/
-	
+
+	*/
 
 /*------------tekstur balon---------------*/
 
