@@ -603,7 +603,7 @@ unsigned int LoadTextureFromBmpFile(char *filename);
 
 
 
-void balon1(void){
+void balonatas(void){
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[1]);
 glTranslatef(0,100,0);
@@ -620,11 +620,13 @@ gluQuadricNormals(pObj, GLU_SMOOTH);
 
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[1]);
-glTranslatef(0,100,0);  
+glTranslatef(0,90,0);  
 glRotatef(90,1,0,0);
-gluCylinder(pObj, 20, 5, 40, 25, 25);
+gluCylinder(pObj, 17, 5, 20, 25, 25);
 glPopMatrix();
 }
+
+
 
 /*
 void kotak1(void){
@@ -635,14 +637,14 @@ glutSolidTorus(0.19,0.20,20,50);
 glPopMatrix();
 }*/
 
-void kotak1(void){
+void kotak(void){
 glPushMatrix();
 glBindTexture(GL_TEXTURE_2D, texture[2]);
-glTranslatef(0,50,0);
-glutSolidCube(7.5);
+glTranslatef(0,60,0);
+glScalef(1, 0.6, 1);
+glutSolidCube(8);
 glPopMatrix();
 }
-
 
 
 
@@ -955,7 +957,7 @@ glPopMatrix();
 
 //Balon
 
-balon1();
+balonatas();
 
 balonbawah();
 
@@ -963,7 +965,7 @@ balonbawah();
 
 
 //Kotak dibawah balon
-kotak1();
+kotak();
 
 
 
